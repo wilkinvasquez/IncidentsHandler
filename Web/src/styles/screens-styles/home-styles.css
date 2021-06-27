@@ -1,0 +1,19 @@
+#home-section-items-title {
+    font-family: Roboto-Black;
+    color: #2B85FF;
+    font-size: 20pt;
+    margin-top: 30px;
+}
+
+#home-section-items {
+    margin-top: 40px;
+    overflow-y: scroll;
+    position: absolute;
+    top: 380px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #DCE6F7;
+    border-radius: 5px;
+}

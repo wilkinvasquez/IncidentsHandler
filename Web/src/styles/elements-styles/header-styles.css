@@ -1,0 +1,17 @@
+@font-face {
+    font-family: Roboto-Medium;
+    src: url(../../assets/fonts/roboto/Roboto-Medium.ttf);
+}
+
+#header-container {
+    background-color: #FFFFFF;
+    height: 60px;
+}
+
+#header-user-name-container {
+    font-family: Roboto-Medium;
+    color: #767676;
+    font-size: 15pt;
+    float: left;
+    padding: 14px 0 0 23px;
+}

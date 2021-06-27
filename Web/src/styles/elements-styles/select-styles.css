@@ -1,0 +1,23 @@
+@font-face {
+    font-family: Roboto-Bold;
+    src: url(../../assets/fonts/roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(../../assets/fonts/roboto/Roboto-Regular.ttf);
+}
+
+.select-container {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.select-title {
+    font-family: Roboto-Bold;
+}
+
+.select-field {
+    font-family: Roboto-Regular;
+    width: 100%;
+}

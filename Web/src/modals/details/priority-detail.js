@@ -1,0 +1,129 @@
+import React, { useContext, useState, useEffect, useCallback } from 'react';
+import Button from '../../elements/button';
+import AppContext from '../../context/app-context';
+import '../../styles/details-styles/detail-styles.css';
+import Detail from '../../elements/detail';
+import SLAsService from '../../services/slas-service';
+import AlertTypes from '../../constants/alert-types';
+
+const PriorityDetail = () => {
+    const [state, setState] = useContext(AppContext);
+    const [sla, setSla] = useState({});
+    const [priority, setPriority] = useState({});
+
+    useEffect(() => {
+        setPriority(state.detailPayload);
+    }, []);
+
+    useEffect(() => {
+        if (priority.slaId !== undefined) {
+            getSla();
+        }
+    }, [priority]);
+
+    const getSla = useCallback(() => {
+        setState(state => ({
+            ...state,
+            isLoadingVisible: true
+        }));
+
+        SLAsService.getById(priority.slaId)
+            .then(result => {
+                setSla(result);
+
+                setState(state => ({
+                    ...state,
+                    isLoadingVisible: false,
+                    isSignedIn: true
+                }));
+            })
+            .catch(error => {
+                setState(state => ({
+                    ...state,
+                    isAlertVisible: true,
+                    alertType: AlertTypes.ERROR,
+                    alertText: error,
+                    isLoadingVisible: false
+                }));
+            });
+    });
+
+    return (
+        <div className="detail-container col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+            <div className="detail-sub-container">
+                <div className="detail-title">
+                    Priority details
+                </div>
+
+                <img
+                    className="detail-close"
+                    src={require('../../assets/images/icons/close.png')}
+                    alt=""
+                    onClick={() => setState(state => ({
+                        ...state,
+                        isDetailVisible: false
+                    }))}
+                />
+
+                <div className="detail-fields-container row">
+                    <div className="col-lg-6 col-md-6 col-sm-6">
+                        <Detail
+                            title={'Name'}
+                            value={priority.name}
+                            titleStyle={{
+                                color: '#2B85FF',
+                                textTransform: 'uppercase',
+                                fontSize: '10pt'
+                            }}
+                            valueStyle={{
+                                border: 0,
+                                outline: 0,
+                                background: 'transparent',
+                                color: '#767676'
+                            }}
+                        />
+                    </div>
+
+                    <div className="col-lg-6 col-md-6 col-sm-6">
+                        <Detail
+                            title={'SLA'}
+                            value={sla.description}
+                            titleStyle={{
+                                color: '#2B85FF',
+                                textTransform: 'uppercase',
+                                fontSize: '10pt'
+                            }}
+                            valueStyle={{
+                                border: 0,
+                                outline: 0,
+                                background: 'transparent',
+                                color: '#767676'
+                            }}
+                        />
+                    </div>
+                </div>
+
+                <div className="detail-buttons-container">
+                    <Button
+                        title={'Close'}
+                        type={"button"}
+                        style={{
+                            color: '#FFFFFF',
+                            backgroundColor: '#2B85FF',
+                            height: '35px',
+                            width: '100px',
+                            float: 'right',
+                            fontSize: '10pt'
+                        }}
+                        callback={() => setState(state => ({
+                            ...state,
+                            isDetailVisible: false
+                        }))}
+                    />
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default PriorityDetail;

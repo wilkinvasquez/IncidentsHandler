@@ -1,0 +1,20 @@
+#main-template-container {
+    background-color: #F1F6FF;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#main-template-header-children-container {
+    position: relative;
+}
+
+#main-template-children-container {
+    position: absolute;
+    top: 80px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
