@@ -5,7 +5,7 @@ const SplashScreen = () => {
     return (
         <div className="splash-screen-container">
             <div id="splash-screen-sub-container">
-                <img id="splash-screen-imagotype" src={require('../assets/images/incidentium-imagotype.png')} alt="" />
+                <img id="splash-screen-imagotype" src={require('../assets/images/incidents-handler-imagotype.png')} alt="" />
 
                 <div className="spinner">
                     <div className="rect1"></div>

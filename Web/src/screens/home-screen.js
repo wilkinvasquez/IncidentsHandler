@@ -41,7 +41,7 @@ const HomeScreen = props => {
             isLoadingVisible: true
         }));
 
-        let userId = JSON.parse(window.localStorage.getItem('incidentiumUser')).id;
+        let userId = JSON.parse(window.localStorage.getItem('incidentsHandlerUser')).id;
 
         UsersService.getAssignedIncidents(userId)
             .then(result => {

@@ -10,14 +10,14 @@ const Header = () => {
     const [user, setUser] = useState({});
 
     useEffect(() => {
-        const user = JSON.parse(localStorage.getItem('incidentiumUser'));
+        const user = JSON.parse(localStorage.getItem('incidentsHandlerUser'));
 
         setUser(user);
     }, []);
 
     const logout = useCallback(() => {
-        document.cookie = `incidentiumToken=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
-        window.localStorage.removeItem('incidentiumUser');
+        document.cookie = `incidentsHandlerToken=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
+        window.localStorage.removeItem('incidentsHandlerUser');
 
         setState(state => ({
             ...state,

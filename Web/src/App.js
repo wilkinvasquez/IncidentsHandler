@@ -22,7 +22,7 @@ const App = () => {
     useEffect(() => {
         // Verify if user is signed in.
 
-        let token = document.cookie.split(';').filter(element => element.includes('incidentiumToken'))[0];
+        let token = document.cookie.split(';').filter(element => element.includes('incidentsHandlerToken'))[0];
 
         if (token !== undefined) {
             token = token.split('=')[1];

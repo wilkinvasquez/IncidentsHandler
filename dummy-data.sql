@@ -1,4 +1,4 @@
-USE [Incidentium];
+USE [Incidents];
 
 -- Departments
 
@@ -230,7 +230,7 @@ GO
 INSERT INTO
 	[Users]
 VALUES
-	(GETDATE(), 1, NULL, NULL, 0, NULL, NULL, 'Admin', '', '000-0000000-0', 'admin@incidentium.com', '000-000-0000', GETDATE(), 'admin', '1234', 18);
+	(GETDATE(), 1, NULL, NULL, 0, NULL, NULL, 'Admin', '', '000-0000000-0', 'admin@incidentsHandler.com', '000-000-0000', GETDATE(), 'admin', '1234', 18);
 
 GO
 
