@@ -16,7 +16,7 @@ const Menu = () => {
     return (
         <div id="menu-container">
             <div id="menu-imagotype-container">
-                <img id="menu-imagotype" src={require('../assets/images/incidentium-imagotype-horizontal.png')} alt="" />
+                <img id="menu-imagotype" src={require('../assets/images/incidents-handler-imagotype-horizontal.png')} alt="" />
             </div>
 
             <ul id="menu-options">

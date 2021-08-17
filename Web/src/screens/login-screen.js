@@ -25,9 +25,9 @@ const LoginScreen = (props) => {
 
         UsersService.login(username, password)
             .then(result => {
-                document.cookie = `incidentiumToken=${result.token};path=/;`;
+                document.cookie = `incidentsHandlerToken=${result.token};path=/;`;
                 delete result.token;
-                window.localStorage.setItem('incidentiumUser', JSON.stringify(result));
+                window.localStorage.setItem('incidentsHandlerUser', JSON.stringify(result));
 
                 setState(state => ({
                     ...state,
@@ -59,7 +59,7 @@ const LoginScreen = (props) => {
                 return (
                     <form id="login-container" onSubmit={login}>
                         <div id="login-sub-container">
-                            <img id="imagotype" src={require('../assets/images/incidentium-imagotype.png')} alt="" />
+                            <img id="imagotype" src={require('../assets/images/incidents-handler-imagotype.png')} alt="" />
 
                             <div className="login-input-container">
                                 <Input
