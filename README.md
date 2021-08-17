@@ -1,7 +1,3 @@
-<h1 align="center">
-  <img src="https://github.com/wilkinvasquez/Incidentium/blob/development/incidentium-readme-imagotype.png" width="100%"/><br/>
-</h1>
-
 This is a web application to manage incidents through tickets.
 
 ## How to run the application
