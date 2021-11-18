@@ -1,4 +1,4 @@
-## Incidents handler
+## Incidents handler API
 This is a web application to manage incidents through tickets.
 
 ## How to run the application
