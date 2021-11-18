@@ -12,9 +12,3 @@ This is a web application to manage incidents through tickets.
 - Run command **update-database**
 - In SQL Server run the SQL script that is in the file */dummy-data.sql*
 - Run the application
-
-### 2. Run the Web
-
-- Open in console */IncidentsHandler/Web/*
-- Run command **npm install**
-- Run command **npm start**
